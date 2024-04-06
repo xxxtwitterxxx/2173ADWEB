@@ -1,0 +1,102 @@
+<div class="row justify-content-center mt-5">
+    <div class="mb-5">
+        <form class="max-w-sm mx-auto" [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <div class="mb-2">
+            <label>Title</label>
+            <input class="form-control" type="text" formControlName="title" required>
+          </div>
+  
+         <!-- <mat-form-field>
+            <mat-label>Enter Book Title</mat-label>
+            <input matInput placeholder="Ex. Harry Potter" formControlName="title">
+          </mat-form-field>   -->
+   
+          <div class="mb-2">
+            <label>Price</label>
+            <input class="form-control" type="text" formControlName="price" required>
+          </div>
+   
+          <div class="mb-2">
+            <label>Description</label>
+            <input class="form-control" type="text" formControlName="description" required>
+          </div>
+          <div class="mb-2">
+          <mat-chip-listbox aria-label="Book type" formControlName="book_type">
+            <mat-chip-option>Local Author</mat-chip-option>
+            <mat-chip-option>Foreign Author</mat-chip-option>
+          </mat-chip-listbox>
+          </div>
+          
+          <div class="mb-2">
+            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Add Book</button>
+          </div>
+          
+          
+        </form>
+    </div>
+  
+  </div>
+  <mat-tab-group animationDuration="2000ms" class="custom-tab-group">
+    <mat-tab label="List of Books" class="custom-tab">
+      <mat-list role="list" class="custom-list">
+        <h2 class="list-title">Pick a Book</h2>
+        <mat-list-item role="listitem">Book 1: The Great Gatsby</mat-list-item>
+        <p class="book-description">A classic novel by F. Scott Fitzgerald, exploring themes of wealth, love, and the American Dream.</p>
+        <mat-list-item role="listitem">Book 2: To Kill a Mockingbird</mat-list-item>
+        <p class="book-description">A Pulitzer Prize-winning novel by Harper Lee, addressing racial injustice and moral growth in the American South.</p>
+        <mat-list-item role="listitem">Book 3: Harry Potter and the Sorcerer's Stone</mat-list-item>
+        <p class="book-description">The first book in the Harry Potter series by J.K. Rowling, following the journey of a young wizard.</p>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Genres" class="custom-tab">
+        <h3 class="list-title">&nbsp;&nbsp;Select Genre</h3>
+        <div class="example-button-row">
+          <button mat-fab extended color="primary" class="custom-button">
+            <mat-icon class="icon">book</mat-icon> <!-- Icon for Fiction --><div matBadge="10" matBadgeOverlap="false" class="demo-section"></div>
+            Fiction
+          </button>
+          <button mat-fab extended color="accent" class="custom-button">
+            <mat-icon class="icon">history</mat-icon> <!-- Icon for History -->
+            History
+          </button>
+          <button mat-fab extended color="warn" class="custom-button">
+            <mat-icon class="icon">science</mat-icon> <!-- Icon for Science -->
+            Science
+          </button>
+          <button mat-fab extended disabled class="custom-button">
+            <mat-icon class="icon">business</mat-icon> <!-- Icon for Business -->
+            Business
+          </button>
+          <a mat-fab extended routerLink="." class="custom-button">
+            <mat-icon class="icon">language</mat-icon> <!-- Icon for Language -->
+            Language
+          </a>
+        </div>
+      </mat-tab>
+      <mat-tab label="Testimonials">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title-group>
+                <mat-card-title matBadge="2" matBadgeOverlap="false" class="demo-section">Book Testimonial</mat-card-title>
+                <mat-card-subtitle>Reviewer: Ryan Will</mat-card-subtitle>
+                <img mat-card-md-image src="https://m.media-amazon.com/images/I/91ocU8970hL._AC_UF1000,1000_QL80_.jpg"  alt="harry potter and the sorcerer's stone">
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content>
+                <p>"Harry Potter and the Sorcerer's Stone is an enchanting journey into a world of magic and wonder. From the moment I opened the pages, I was transported to Hogwarts School of Witchcraft and Wizardry, where I followed Harry, Ron, and Hermione on their thrilling adventures. This book is a timeless classic that will capture the hearts of readers of all ages."</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+            </mat-card-content>
+          </mat-card>
+      </mat-tab>
+      <mat-tab label="Bestsellers">
+        <mat-list role="list" class="custom-list">
+          <h2 class="list-title">Bestselling Books</h2>
+          <mat-list-item role="listitem">Book 4: 1984</mat-list-item>
+          <p class="book-description">A dystopian novel by George Orwell, depicting a totalitarian regime and the struggle for individual freedom.</p>
+          <mat-list-item role="listitem">Book 5: The Catcher in the Rye</mat-list-item>
+          <p class="book-description">A novel by J.D. Salinger, following the disillusioned teenage protagonist Holden Caulfield through New York City.</p>
+          <mat-list-item role="listitem">Book 6: Pride and Prejudice</mat-list-item>
+          <p class="book-description">A romantic novel by Jane Austen, exploring themes of love, class, and societal expectations in 19th-century England.</p>
+        </mat-list>
+      </mat-tab>
+  </mat-tab-group>
